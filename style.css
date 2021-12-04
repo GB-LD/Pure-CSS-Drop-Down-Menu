@@ -1,0 +1,101 @@
+/*
+* font-family: 'Alegreya SC', serif;
+*  font-family: 'Oswald', sans-serif;
+*/
+
+/* general style settings*/
+* {
+  margin: 0;
+  padding: 0;
+  border-collapse: separate;
+  box-sizing: border-box;
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+  color: rgba(40, 55, 71, 1);
+}
+
+body {
+  padding: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(40, 55, 71, 1);
+}
+
+/* header and background style*/
+header {
+  background-image: linear-gradient(
+      rgba(133, 193, 233, 0.6),
+      rgba(40, 116, 166, 0.2)
+    ),
+    url(./parasole.jpg);
+  background-position: top;
+  background-size: cover;
+  clip-path: polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
+  /*display: flow-root; creating new formating context for avoid margin collapse*/
+  padding: 1em;
+  height: 50vh;
+}
+
+header h1 {
+  font-weight: bold;
+  font-size: 3rem;
+  text-align: center;
+  margin: 2rem 0 3rem 0;
+  color: rgba(241, 196, 15, 1);
+  text-shadow: 4px 4px #922b21;
+}
+
+/* drop down menu style*/
+nav {
+  display: flex;
+}
+
+nav > .dropdown {
+  width: 100%;
+  background-color: rgba(241, 196, 15, 1);
+  text-align: center;
+  padding: 10px;
+  margin: 5px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+nav > .dropdown:hover {
+  background-color: rgba(241, 196, 15, 0.6);
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 800px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.dropdown-menu {
+  display: flex;
+  flex-direction: column;
+
+  position: absolute;
+  left: 0;
+  top: calc(100%);
+  width: 100%;
+  opacity: 0;
+}
+
+.dropdown-content {
+  background-color: rgba(241, 196, 15, 1);
+  width: 100%;
+  padding: 10px;
+  margin-top: 3px;
+}
+
+.dropdown:hover > .dropdown-menu {
+  opacity: 1;
+}
+
+.dropdown-menu > a:hover {
+  background-color: rgba(241, 196, 15, 0.6);
+}
